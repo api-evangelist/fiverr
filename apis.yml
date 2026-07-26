@@ -1,8 +1,29 @@
 aid: fiverr
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fiverr.png
 name: Fiverr
-description: 'Fiverr is a company surfaced as a portfolio company of accel, bessemer-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: 'Fiverr is a global online marketplace for freelance digital services,
+  founded in 2010 and headquartered in Tel Aviv, Israel, and publicly traded on the
+  New York Stock Exchange (NYSE: FVRR). The platform connects businesses and individuals
+  with freelancers offering "gigs" across hundreds of categories including graphic
+  design, writing and translation, programming and tech, video and animation, digital
+  marketing, music and audio, and AI services. Fiverr also operates Fiverr Pro and
+  Fiverr Enterprise for vetted talent and managed teams, Fiverr Workspace for freelancer
+  business tooling, and an affiliate partnership program. Fiverr does not currently
+  publish a public developer API portal or OpenAPI-described API; its programmatic
+  surfaces are limited to the consumer marketplace and partner/affiliate integrations.
+  This profile was surfaced as a portfolio company of Accel and Bessemer Venture Partners
+  and enriched with the public identity, security, and discovery signals available.'
 url: https://raw.githubusercontent.com/api-evangelist/fiverr/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,10 +34,14 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
+- Freelance
+- Marketplace
+- Gig Economy
+- Digital Services
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,4 +50,31 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://www.fiverr.com
+  url: https://www.fiverr.com
+- type: HelpCenter
+  url: https://help.fiverr.com/hc/en-us
+- type: Blog
+  url: https://www.fiverr.com/resources/guides
+- type: SignUp
+  url: https://www.fiverr.com/join
+- type: Login
+  url: https://www.fiverr.com/login
+- type: TermsOfService
+  url: https://www.fiverr.com/legal-portal/legal-terms/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.fiverr.com/legal-portal/privacy/privacy-policy
+- type: WellKnown
+  url: well-known/fiverr-well-known.yml
+- type: SecurityTxt
+  url: well-known/fiverr-security.txt
+- type: DomainSecurity
+  url: security/fiverr-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/fiverr-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.fiverr.com/.well-known/security.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

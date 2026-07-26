@@ -1,0 +1,16 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of https://www.fiverr.com/.well-known/*
+host: https://www.fiverr.com
+documents:
+- path: /.well-known/security.txt          # RFC 9116
+  status: 200
+  file: fiverr-security.txt
+- path: /.well-known/openid-configuration   # OIDC discovery
+  status: 302                               # redirects to homepage, no OIDC document
+- path: /.well-known/oauth-authorization-server  # RFC 8414
+  status: 302                               # redirects to homepage, no document
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
