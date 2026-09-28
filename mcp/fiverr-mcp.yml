@@ -16,6 +16,10 @@ deployment:
 tools_count: 1
 tools:
 - name: find_freelancers
-  description: ''
+  description: Find freelancers who match a user's project, business, or professional need. Use this tool
+    when the user wants to hire, outsource work, discover talent or experts, shortlist candidates, or
+    compare professionals available through the Fiverr
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
