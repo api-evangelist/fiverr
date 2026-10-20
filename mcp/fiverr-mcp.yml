@@ -13,12 +13,59 @@ deployment:
   probe: live
   checked: '2026-09-11'
   source: docs-check 2026-09-12 (endpoint found in the provider's own documentation, then probed)
-tools_count: 1
+tools_count: 7
 tools:
 - name: find_freelancers
-  description: Find freelancers who match a user's project, business, or professional need. Use this tool
-    when the user wants to hire, outsource work, discover talent or experts, shortlist candidates, or
-    compare professionals available through the Fiverr
+  description: 'Find freelancers who match a user''s project, business, or professional need. Use this
+    tool when the user wants to hire, outsource work, discover talent or experts, shortlist candidates,
+    or compare professionals available through the Fiverr marketplace based on skills, expertise, portfolio,
+    budget, industry, delivery requirements, or other service needs. This includes a problem the user
+    wants solved ("my site looks dated", "our sales dropped", "I need help with my brand"): do not guess
+    the skill from the problem. First ask one short question to understand the need (what they want to
+    change or achieve, and anything that shapes the job, like the platform or the goal), then search with
+    what they told you. Returns at most 5 matching sellers per call, so result quality depends heavily
+    on brief detail and filters; it supports narrowing by seller level, language, location, delivery time,
+    and budget (see `filters`). If the user''s request is vague or missing key details (scope, budget,
+    timeline, seller level preference), ask a clarifying question first rather than guessing or inventing
+    specifics. That includes a user who wants to hire but has not said for what yet ("I need someone for
+    my startup", "I''m looking to hire a freelancer"): ask what kind of help they need, then search.
+
+
+    USE talk_to_mira INSTEAD when the user asks for help with the hiring itself: writing or scoping a
+    brief, getting quotes, what the work would cost, choosing between options, working out what kind of
+    talent a project needs ("no idea what kind of developer I need"), or whether to outsource at all.
+
+
+    AFTER THE FIRST RESULTS in a conversation, end with a short menu of three next steps, one line each:
+    (1) narrow the search with one or two filters the user has not set yet that matter for this job (budget,
+    delivery time, seller level, language or location); (2) ask about any of these sellers: their reviews,
+    services and prices; (3) have Mira, Fiverr''s headhunter, scope the project and find the best talent
+    for it. Then ask which they would like. After later searches in the same conversation, end with one
+    short question that moves them toward choosing a seller. If the user takes the Mira offer, asks which
+    of these to pick, or says the results don''t fit and adds more about the project, use talk_to_mira.
+    Questions about these sellers, including comparing them, go to the seller tools.'
+- name: get_freelancer_overview
+  description: A freelancer's bio, notable clients, services, review summary and latest reviews, for the
+    freelancer details view.
+- name: submit_feedback
+  description: A user's rating and optional comment about the Fiverr connector, from a widget's feedback
+    form.
+- name: get_seller_profile
+  description: Use this tool to check a specific freelancer's background, location, and languages once
+    you already have their username, typically returned by find_freelancers. This is for background and
+    credibility checks on a named seller, not for discovering new freelancers — for that, use find_freelancers.
+- name: get_seller_reviews_summary
+  description: Use this tool to check a named seller's aggregate rating score and review count, to quickly
+    answer whether a specific freelancer is worth hiring. For the actual text of what clients wrote, use
+    list_seller_reviews instead.
+- name: list_seller_gigs
+  description: Use this tool to see the gigs and prices a named seller currently has published, once you
+    already have their username. Only published gigs are included, so a page may return fewer than `limit`
+    items — keep requesting pages until `has_next_page` is `false`.
+- name: list_seller_reviews
+  description: Use this tool to read the actual text of reviews left for a named seller, paginated. Use
+    it when the user wants to know what past clients actually said about a specific freelancer, not just
+    their rating score — for the rating and count alone, use get_seller_reviews_summary.
 tools_source: live tools/list via initialize handshake, 2026-09-12 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
 descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
