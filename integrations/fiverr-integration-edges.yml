@@ -1,8 +1,19 @@
-generated: '2026-10-14'
+generated: '2026-10-20'
 method: searched
+source:
+- shopify/integrations/shopify-integration-edges.yml
+- https://zapier.com/apps/fiverr/integrations
+- https://n8n.io/integrations/fiverr/
+- https://composio.dev/toolkits/fiverr
+- https://monid.ai/tools/fiverr
 checked:
 - https://storage.googleapis.com/tcfac/additional-consent-providers.csv
 - shopify/integrations/shopify-integration-edges.yml
+- https://composio.dev/toolkits/fiverr
+- https://monid.ai/tools/fiverr
+- https://n8n.io/integrations/fiverr/
+- https://zapier.com/apps/fiverr/integrations
+summary: null
 marketplace_apps: []
 edges:
 - partner_name: Google Ad Tech Providers
@@ -46,5 +57,4 @@ edges:
   detected_by: mirror-platform-listings.py
   publisher_verified:
   - Built for Shopify
-source:
-- shopify/integrations/shopify-integration-edges.yml
+templates: []
